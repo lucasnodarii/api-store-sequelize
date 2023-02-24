@@ -9,7 +9,7 @@ const productController = {
         !product.description ||
         !product.value ||
         !product.stock ||
-        !product.supplier_id
+        !product.supplierId
       ) {
         throw new Error("Submit all fields for registration");
       }
@@ -49,12 +49,12 @@ const productController = {
     try {
       let product = req.body;
       if (
-        !product.product_id ||
+        !product.productId ||
         !product.name ||
         !product.description ||
         !product.value ||
         !product.stock ||
-        !product.supplier_id
+        !product.supplierId
       ) {
         throw new Error("Submit all fields for update");
       }

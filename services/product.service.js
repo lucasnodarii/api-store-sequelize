@@ -1,10 +1,11 @@
 import productRepository from "../repositories/product.repository.js";
 import supplierRepository from "../repositories/supplier.repository.js";
+import saleRepository from "../repositories/sale.repository.js";
 
 const productService = {
   createProductService: async function (product) {
     const supplier = await supplierRepository.getSupplierRepository(
-      product.supplier_id
+      product.supplierId
     );
     if (!supplier) {
       throw new Error("Supplier not exists");
@@ -20,11 +21,15 @@ const productService = {
     return await productRepository.getProductRepository(id);
   },
   deleteProductService: async function (id) {
+    const sales = await saleRepository.getSalesByProductIdRepository(id);
+    if(sales.length !== 0){
+      throw new Error("Não é possível excluir, o produto já possui vendas")
+    }
     await productRepository.deleteProductRepository(id);
   },
   updateProductService: async function (product) {
     const supplier = await supplierRepository.getSupplierRepository(
-      product.supplier_id
+      product.supplierId
     );
     if (!supplier) {
       throw new Error("Supplier not exists");

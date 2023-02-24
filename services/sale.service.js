@@ -5,13 +5,13 @@ import productRepository from "../repositories/product.repository.js";
 const saleService = {
   createSaleService: async function (sale) {
     const product = await productRepository.getProductRepository(
-      sale.product_id
+      sale.productId
     );
     if (!product) {
       throw new Error("Product not exists");
     }
 
-    const client = await clientRepository.getClientRepository(sale.client_id);
+    const client = await clientRepository.getClientRepository(sale.clientId);
     if (!client) {
       throw new Error("Client not exists");
     }
@@ -40,7 +40,7 @@ const saleService = {
     const sale = await saleRepository.getSaleRepository(id);
     if (sale) {
       const product = await productRepository.getProductRepository(
-        sale.product_id
+        sale.productId
       );
       await saleRepository.deleteSaleRepository(id);
       product.stock++;
@@ -50,11 +50,11 @@ const saleService = {
     }
   },
   updateSaleService: async function (sale) {
-    if (!(await productRepository.getProductRepository(sale.product_id))) {
+    if (!(await productRepository.getProductRepository(sale.productId))) {
       throw new Error("Product not exists");
     }
 
-    if (!(await clientRepository.getClientRepository(sale.client_id))) {
+    if (!(await clientRepository.getClientRepository(sale.clientId))) {
       throw new Error("Client not exists");
     }
     return await saleRepository.updateSaleRepository(sale);

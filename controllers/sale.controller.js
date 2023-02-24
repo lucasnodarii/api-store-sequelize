@@ -7,8 +7,8 @@ const saleController = {
       if (
         !sale.value ||
         !sale.date ||
-        !sale.client_id ||
-        !sale.product_id
+        !sale.clientId ||
+        !sale.productId
       ) {
         throw new Error("Submit all fields for registration");
       }
@@ -21,7 +21,7 @@ const saleController = {
   },
   getSales: async function (req, res, next) {
     try {
-      res.send(await saleService.getSalesService(req.query.product_id));
+      res.send(await saleService.getSalesService(req.query.productId));
       logger.info("GET /sale");
     } catch (error) {
       next(error);
@@ -50,9 +50,9 @@ const saleController = {
       if (
         !sale.value ||
         !sale.date ||
-        !sale.client_id ||
-        !sale.product_id ||
-        !sale.sale_id
+        !sale.clientId ||
+        !sale.productId ||
+        !sale.saleId
       ) {
         throw new Error("Submit all fields for update");
       }

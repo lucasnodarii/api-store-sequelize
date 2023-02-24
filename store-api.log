@@ -70,3 +70,65 @@
 2023-02-21T20:58:58.751Z [store-api] info: GET /sale
 2023-02-24T16:10:31.059Z [store-api] error: GET  - connect ECONNREFUSED ::1:5432
 2023-02-24T16:11:55.930Z [store-api] info: GET /client
+2023-02-24T19:33:31.169Z [store-api] info: GET /client
+2023-02-24T19:33:39.299Z [store-api] info: GET /client
+2023-02-24T19:34:24.375Z [store-api] error: PUT  - getClientRepository is not defined
+2023-02-24T19:34:59.283Z [store-api] info: PUT /client - {"clientId":3,"name":"Maria Santos Silva","cpf":"25395684588","phone":"52999741133","email":"maria@gmail.com","adress":"Rua Y, n.80"}
+2023-02-24T19:35:03.901Z [store-api] info: GET /client
+2023-02-24T19:35:11.322Z [store-api] error: DELETE  - update or delete on table "clients" violates foreign key constraint "fk_clients" on table "sales"
+2023-02-24T19:35:51.360Z [store-api] info: DELETE /client
+2023-02-24T19:35:55.415Z [store-api] info: GET /client
+2023-02-24T19:57:35.755Z [store-api] info: GET /supplier
+2023-02-24T19:57:53.730Z [store-api] info: POST /supplier - {"supplierId":2,"name":"Supermercado Viza","cnpj":"033128259000190","phone":"4935669563","email":"contato@superviza.com","adress":"Rod SC 355, n.1090"}
+2023-02-24T19:57:59.654Z [store-api] info: GET /supplier
+2023-02-24T19:58:01.362Z [store-api] info: GET /supplier
+2023-02-24T19:58:29.173Z [store-api] info: PUT /supplier - {"supplierId":2,"name":"Supermercado Viza","cnpj":"033128259000190","phone":"4935669563","email":"contato@superviza.com","adress":"Rua XV de Novembro, n.80"}
+2023-02-24T19:58:34.851Z [store-api] info: GET /supplier
+2023-02-24T19:58:48.172Z [store-api] info: POST /supplier - {"supplierId":3,"name":"Supermercado Zarpelon","cnpj":"033128259000190","phone":"4935669563","email":"contato@superviza.com","adress":"Rod SC 355, n.1090"}
+2023-02-24T19:58:53.005Z [store-api] info: GET /supplier
+2023-02-24T19:58:56.562Z [store-api] info: DELETE /supplier
+2023-02-24T19:58:59.469Z [store-api] info: GET /supplier
+2023-02-24T20:01:51.897Z [store-api] info: GET /product
+2023-02-24T20:01:59.536Z [store-api] info: GET /product
+2023-02-24T20:02:12.261Z [store-api] error: PUT  - Supplier not exists
+2023-02-24T20:02:18.029Z [store-api] error: PUT  - Supplier not exists
+2023-02-24T20:02:24.158Z [store-api] error: PUT  - Supplier not exists
+2023-02-24T20:02:55.936Z [store-api] error: PUT  - Submit all fields for update
+2023-02-24T20:03:15.504Z [store-api] error: PUT  - Supplier not exists
+2023-02-24T20:03:23.508Z [store-api] info: GET /supplier
+2023-02-24T20:04:08.877Z [store-api] info: PUT /product - {"productId":5,"name":"Feijão Tia Benta 1kg","description":"Feijão carioca selecionado","value":"10.56","stock":1,"supplierId":1}
+2023-02-24T20:04:12.450Z [store-api] info: GET /product
+2023-02-24T20:04:19.930Z [store-api] error: DELETE  - update or delete on table "products" violates foreign key constraint "fk_products" on table "sales"
+2023-02-24T20:04:37.067Z [store-api] info: DELETE /product
+2023-02-24T20:04:39.434Z [store-api] info: GET /product
+2023-02-24T20:08:53.614Z [store-api] error: POST  - Supplier not exists
+2023-02-24T20:10:30.036Z [store-api] info: POST /product - {"productId":6,"name":"Açucar Docura 5kg","description":"Açucar cristalizado","value":"6.6","stock":2,"supplierId":1}
+2023-02-24T20:10:45.451Z [store-api] info: PUT /product - {"productId":6,"name":"Açucar Docura 1kg","description":"Açucar cristalizado","value":"6.6","stock":2,"supplierId":1}
+2023-02-24T20:10:52.172Z [store-api] info: GET /product
+2023-02-24T20:10:56.693Z [store-api] error: DELETE  - connect is not a function
+2023-02-24T20:21:29.259Z [store-api] error: GET  - connect is not defined
+2023-02-24T20:21:37.619Z [store-api] error: GET  - connect is not defined
+2023-02-24T20:21:45.996Z [store-api] error: GET  - connect is not defined
+2023-02-24T20:22:40.027Z [store-api] info: POST /sale - {"saleId":8,"value":"6.9","date":"2023-02-02","clientId":3,"productId":5}
+2023-02-24T20:23:29.140Z [store-api] info: GET /sale
+2023-02-24T20:24:54.708Z [store-api] info: GET /sale
+2023-02-24T20:25:31.119Z [store-api] info: GET /sale
+2023-02-24T20:29:23.502Z [store-api] info: GET /sale
+2023-02-24T20:29:31.140Z [store-api] info: GET /sale
+2023-02-24T20:30:39.284Z [store-api] info: GET /sale
+2023-02-24T20:31:34.654Z [store-api] info: GET /sale
+2023-02-24T20:36:45.998Z [store-api] info: GET /sale
+2023-02-24T20:36:53.025Z [store-api] info: DELETE /sale
+2023-02-24T20:36:59.635Z [store-api] info: GET /sale
+2023-02-24T20:40:13.786Z [store-api] info: GET /sale
+2023-02-24T20:41:36.276Z [store-api] info: PUT /sale - {"saleId":4,"value":"550.9","date":"2023-02-02","clientId":3,"productId":1}
+2023-02-24T20:41:42.895Z [store-api] info: GET /sale
+2023-02-24T20:42:43.147Z [store-api] info: DELETE /sale
+2023-02-24T20:42:46.024Z [store-api] info: GET /sale
+2023-02-24T20:43:12.759Z [store-api] info: GET /product
+2023-02-24T20:43:17.800Z [store-api] error: DELETE  - Não é possível excluir, o produto já possui vendas
+2023-02-24T20:44:30.692Z [store-api] error: DELETE  - Não é possível excluir, o produto já possui vendas
+2023-02-24T20:44:55.344Z [store-api] error: DELETE  - Não é possível excluir, o produto já possui vendas
+2023-02-24T20:46:15.717Z [store-api] info: DELETE /product
+2023-02-24T20:46:18.696Z [store-api] info: GET /product
+2023-02-24T20:46:58.010Z [store-api] error: DELETE  - Não é possível excluir, o produto já possui vendas
