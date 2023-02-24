@@ -1,0 +1,72 @@
+2023-02-20T20:33:57.224Z [store-api] error: POST  - Submit all fields for registration
+2023-02-21T16:18:04.208Z [store-api] error: POST  - column "address" of relation "clients" does not exist
+2023-02-21T16:19:23.756Z [store-api] info: POST /client - {"name":"João Silva","cpf":"12345678900","phone":"49998985544","email":"joao@gmail.com","adress":"Rua X, n.190"}
+2023-02-21T16:27:01.900Z [store-api] info: POST /client - {"name":"João Silva","cpf":"12345678900","phone":"49998985544","email":"joao@gmail.com","adress":"Rua X, n.190"}
+2023-02-21T16:55:34.164Z [store-api] error: POST  - conn is not defined
+2023-02-21T16:55:51.886Z [store-api] info: POST /client - {"name":"João Silva","cpf":"12345678900","phone":"49998985544","email":"joao@gmail.com","adress":"Rua X, n.190"}
+2023-02-21T17:13:11.223Z [store-api] info: GET /client
+2023-02-21T17:24:50.626Z [store-api] error: GET  - clientService.getClient is not a function
+2023-02-21T17:25:12.476Z [store-api] info: GET /client
+2023-02-21T17:31:17.482Z [store-api] info: GET /client
+2023-02-21T17:31:38.752Z [store-api] info: DELETE /client
+2023-02-21T17:31:42.689Z [store-api] info: GET /client
+2023-02-21T17:45:28.441Z [store-api] info: POST /client - {"client_id":7,"name":"João Silva","cpf":"12345678900","phone":"49998985544","email":"joao@gmail.com","adress":"Rua X, n.190"}
+2023-02-21T17:45:31.400Z [store-api] info: GET /client
+2023-02-21T17:45:44.827Z [store-api] info: DELETE /client
+2023-02-21T17:46:40.676Z [store-api] error: PUT  - Submit all fields for registration
+2023-02-21T17:48:17.552Z [store-api] info: GET /client
+2023-02-21T17:49:03.511Z [store-api] error: PUT  - Submit all fields for update
+2023-02-21T17:49:41.622Z [store-api] error: PUT  - column "cliente_id" does not exist
+2023-02-21T17:50:04.098Z [store-api] info: PUT /client - undefined
+2023-02-21T17:50:17.237Z [store-api] info: GET /client
+2023-02-21T17:51:02.857Z [store-api] info: PUT /client - {"client_id":3,"name":"Maria Santos","cpf":"25395684588","phone":"52999741133","email":"maria@gmail.com","adress":"Rua Y, n.80"}
+2023-02-21T17:51:06.198Z [store-api] info: GET /client
+2023-02-21T18:05:37.576Z [store-api] info: POST /supplier - {"supplier_id":1,"name":"Supermercado Viza","cnpj":"033128259000190","phone":"4935669563","email":"contato@superviza.com","adress":"Rod SC 355, n.1090"}
+2023-02-21T18:05:40.983Z [store-api] info: GET /supplier
+2023-02-21T18:05:43.933Z [store-api] info: GET /supplier
+2023-02-21T18:05:49.260Z [store-api] info: GET /supplier
+2023-02-21T18:06:21.987Z [store-api] info: PUT /supplier - {"supplier_id":1,"name":"Via Atacadista","cnpj":"033128259000190","phone":"4935669563","email":"contato@viatacado.com","adress":"Rod SC 355, n.1090"}
+2023-02-21T18:06:26.854Z [store-api] info: GET /supplier
+2023-02-21T18:43:31.440Z [store-api] info: POST /product - {"product_id":1,"supplier_id":1,"name":"Arroz Tia Benta 1kg","description":"Arroz parabolizado Tipo 1","value":"10.6","stock":50}
+2023-02-21T18:43:54.629Z [store-api] info: GET /product
+2023-02-21T18:44:20.697Z [store-api] error: POST  - insert or update on table "products" violates foreign key constraint "fk_suppliers"
+2023-02-21T18:44:26.365Z [store-api] error: POST  - insert or update on table "products" violates foreign key constraint "fk_suppliers"
+2023-02-21T18:53:34.687Z [store-api] error: POST  - supplierRepository.getSupplier is not a function
+2023-02-21T18:54:10.993Z [store-api] error: POST  - Supplier not exists
+2023-02-21T18:54:15.353Z [store-api] info: POST /product - {"product_id":4,"supplier_id":1,"name":"Arroz Tia Benta 1kg","description":"Arroz parabolizado Tipo 1","value":"10.6","stock":50}
+2023-02-21T18:58:51.767Z [store-api] info: PUT /product - {"product_id":1,"supplier_id":1,"name":"Arroz parabolizado","description":"Arro branco tipo I","value":"12.65","stock":50}
+2023-02-21T18:58:55.370Z [store-api] error: PUT  - Supplier not exists
+2023-02-21T19:11:34.716Z [store-api] error: POST  - Unexpected token } in JSON at position 81
+2023-02-21T19:11:45.157Z [store-api] error: POST  - date/time field value out of range: "21/02/2023"
+2023-02-21T19:12:02.179Z [store-api] error: POST  - insert or update on table "sales" violates foreign key constraint "fk_clients"
+2023-02-21T19:12:14.605Z [store-api] info: GET /client
+2023-02-21T19:12:20.232Z [store-api] info: POST /sale - {"sale_id":2,"client_id":3,"product_id":1,"value":"50.9","date":"2023-02-02T03:00:00.000Z"}
+2023-02-21T19:13:56.063Z [store-api] info: PUT /sale - {"sale_id":2,"client_id":3,"product_id":1,"value":"150.9","date":"2023-02-02T03:00:00.000Z"}
+2023-02-21T19:14:03.401Z [store-api] info: GET /sale
+2023-02-21T19:14:24.555Z [store-api] info: POST /sale - {"sale_id":3,"client_id":3,"product_id":1,"value":"50.9","date":"2023-02-02T03:00:00.000Z"}
+2023-02-21T19:14:32.338Z [store-api] info: GET /sale
+2023-02-21T19:14:35.874Z [store-api] info: DELETE /sale
+2023-02-21T19:14:37.608Z [store-api] info: GET /sale
+2023-02-21T19:20:08.170Z [store-api] error: POST  - Product not exists
+2023-02-21T19:20:15.028Z [store-api] error: POST  - Client not exists
+2023-02-21T19:20:18.749Z [store-api] info: POST /sale - {"sale_id":4,"client_id":3,"product_id":1,"value":"50.9","date":"2023-02-02T03:00:00.000Z"}
+2023-02-21T20:36:28.356Z [store-api] info: GET /product
+2023-02-21T20:36:47.732Z [store-api] info: GET /client
+2023-02-21T20:37:10.944Z [store-api] error: POST  - Cannot access 'sale' before initialization
+2023-02-21T20:38:37.448Z [store-api] info: POST /sale - {"sale_id":5,"client_id":3,"product_id":1,"value":"50.9","date":"2023-02-02T03:00:00.000Z"}
+2023-02-21T20:38:41.339Z [store-api] info: GET /product
+2023-02-21T20:40:32.529Z [store-api] info: POST /product - {"product_id":5,"supplier_id":1,"name":"Feijão Tia Benta 1kg","description":"Feijão carioca selecionado","value":"6.6","stock":2}
+2023-02-21T20:40:36.298Z [store-api] info: GET /product
+2023-02-21T20:40:48.615Z [store-api] info: POST /sale - {"sale_id":6,"client_id":3,"product_id":5,"value":"6.9","date":"2023-02-02T03:00:00.000Z"}
+2023-02-21T20:40:50.536Z [store-api] info: GET /product
+2023-02-21T20:40:55.530Z [store-api] info: POST /sale - {"sale_id":7,"client_id":3,"product_id":5,"value":"6.9","date":"2023-02-02T03:00:00.000Z"}
+2023-02-21T20:40:57.833Z [store-api] info: GET /product
+2023-02-21T20:41:00.826Z [store-api] error: POST  - There are not stock for this product
+2023-02-21T20:46:23.394Z [store-api] info: GET /sale
+2023-02-21T20:46:39.287Z [store-api] info: DELETE /sale
+2023-02-21T20:46:49.393Z [store-api] info: GET /product
+2023-02-21T20:58:29.023Z [store-api] info: GET /sale
+2023-02-21T20:58:54.783Z [store-api] info: GET /sale
+2023-02-21T20:58:58.751Z [store-api] info: GET /sale
+2023-02-24T16:10:31.059Z [store-api] error: GET  - connect ECONNREFUSED ::1:5432
+2023-02-24T16:11:55.930Z [store-api] info: GET /client
