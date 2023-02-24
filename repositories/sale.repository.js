@@ -45,6 +45,22 @@ const saleRepository = {
       throw error;
     }
   },
+  getSalesBySupplierIdRepository: async function (supplierId) {
+    try {
+      return await Sale.findAll({
+        include: [
+          {
+            model: Product,
+            where: {
+              supplierId: supplierId,
+            },
+          },
+        ],
+      });
+    } catch (error) {
+      throw error;
+    }
+  },
   getSaleRepository: async function (id) {
     try {
       return await Sale.findByPk(id);
@@ -69,7 +85,7 @@ const saleRepository = {
         {
           value: sale.value,
           date: sale.date,
-          clientId: sale.clientId
+          clientId: sale.clientId,
         },
         {
           where: {

@@ -132,3 +132,10 @@
 2023-02-24T20:46:15.717Z [store-api] info: DELETE /product
 2023-02-24T20:46:18.696Z [store-api] info: GET /product
 2023-02-24T20:46:58.010Z [store-api] error: DELETE  - Não é possível excluir, o produto já possui vendas
+2023-02-24T20:57:06.861Z [store-api] info: GET /sale
+2023-02-24T20:57:28.228Z [store-api] info: GET /product
+2023-02-24T20:57:39.695Z [store-api] info: POST /product - {"productId":7,"name":"Açucar Docura 5kg","description":"Açucar cristalizado","value":"6.6","stock":2,"supplierId":2}
+2023-02-24T20:57:53.041Z [store-api] info: GET /product
+2023-02-24T20:58:01.555Z [store-api] info: POST /sale - {"saleId":9,"value":"6.9","date":"2023-02-02","clientId":3,"productId":7}
+2023-02-24T20:58:02.823Z [store-api] info: POST /sale - {"saleId":10,"value":"6.9","date":"2023-02-02","clientId":3,"productId":7}
+2023-02-24T20:58:09.815Z [store-api] info: GET /sale

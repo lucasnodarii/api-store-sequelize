@@ -26,9 +26,12 @@ const saleService = {
     }
   },
 
-  getSalesService: async function (productId) {
+  getSalesService: async function (productId, supplierId) {
     if (productId) {
       return await saleRepository.getSalesByProductIdRepository(productId);
+    }
+    if (supplierId){
+      return await saleRepository.getSalesBySupplierIdRepository(supplierId)
     }
     return await saleRepository.getSalesRepository();
   },
