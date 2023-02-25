@@ -65,6 +65,32 @@ const productController = {
       next(error);
     }
   },
+  createProductInfo: async function (req, res, next) {
+    try {
+      let productInfo = req.body;
+      if (!productInfo.productId) {
+        throw new Error("ProductId is obrigatory");
+      }
+      await productService.createProductInfoService(productInfo);
+      res.end();
+      logger.info(`POST /product/info - ${JSON.stringify(productInfo)}`);
+    } catch (error) {
+      next(error);
+    }
+  },
+  updateProductInfo: async function (req, res, next) {
+    try {
+      let productInfo = req.body;
+      if (!productInfo.productId) {
+        throw new Error("ProductId is obrigatory");
+      }
+      await productService.updateProductInfoService(productInfo);
+      res.end();
+      logger.info(`PUT /product/info - ${JSON.stringify(productInfo)}`);
+    } catch (error) {
+      next(error);
+    }
+  },
 };
 
 export default productController;
