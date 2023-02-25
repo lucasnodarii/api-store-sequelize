@@ -29,6 +29,20 @@ const productInfoRepository = {
       await client.close();
     }
   },
+  getProductInfoRepository: async function (productId) {
+    const client = getClient();
+    try {
+      await client.connect();
+      return await client
+        .db("store")
+        .collection("productInfo")
+        .findOne({ productId });
+    } catch (error) {
+      throw error;
+    } finally {
+      await client.close();
+    }
+  },
 };
 
 export default productInfoRepository;

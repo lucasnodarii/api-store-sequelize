@@ -17,7 +17,7 @@ const productRepository = {
   },
   getProductRepository: async function (id) {
     try {
-      return await Product.findByPk(id);
+      return await Product.findByPk(id, { raw: true });
     } catch (error) {
       throw error;
     }
@@ -40,9 +40,7 @@ const productRepository = {
           productId: product.productId,
         },
       });
-      return await productRepository.getProductRepository(
-        product.productId
-      );
+      return await productRepository.getProductRepository(product.productId);
     } catch (error) {
       throw error;
     }

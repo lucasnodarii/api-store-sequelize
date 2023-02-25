@@ -142,3 +142,4 @@
 2023-02-25T13:35:35.586Z [store-api] info: GET /product
 2023-02-25T13:37:30.551Z [store-api] info: POST /product/info - {"productId":1,"category":"Alimento não perecível","weight":"5 kg","packaging":"Plastic bag","reviews":[],"_id":"63fa0f1abe0f4f7542257fed"}
 2023-02-25T14:00:00.379Z [store-api] info: PUT /product/info - {"productId":1,"category":"Alimento não perecível","weight":"25 kg","packaging":"Plastic bag","reviews":[]}
+2023-02-25T14:13:08.793Z [store-api] info: GET /product

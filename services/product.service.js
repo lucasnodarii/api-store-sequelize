@@ -19,7 +19,10 @@ const productService = {
   },
 
   getProductService: async function (id) {
-    return await productRepository.getProductRepository(id);
+    const product = await productRepository.getProductRepository(id);
+    product.info = await productInfoRepository.getProductInfoRepository(parseInt(id));
+
+    return product;
   },
   deleteProductService: async function (id) {
     const sales = await saleRepository.getSalesByProductIdRepository(id);
