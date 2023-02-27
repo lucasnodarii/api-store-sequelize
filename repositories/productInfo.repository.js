@@ -1,46 +1,36 @@
-import getClient from "./mongo.db.js";
+import ProductInfoSchema from "../schemas/productInfo.schema.js";
+import connect from "./mongo.db.js";
 
 const productInfoRepository = {
   createProductInfoRepository: async function (productInfo) {
-    const client = getClient();
     try {
-      await client.connect();
-      await client.db("store").collection("productInfo").insertOne(productInfo);
+      const mongoose = await connect();
+      const ProductInfo = mongoose.model("ProductInfo", ProductInfoSchema);
+      productInfo = new ProductInfo(productInfo);
+      await productInfo.save();
     } catch (error) {
       throw error;
-    } finally {
-      await client.close();
     }
   },
   updateProductInfoRepository: async function (productInfo) {
-    const client = getClient();
     try {
-      await client.connect();
-      await client
-        .db("store")
-        .collection("productInfo")
-        .updateOne(
-          { productId: productInfo.productId },
-          { $set: { ...productInfo } }
-        );
+      const mongoose = await connect();
+      const ProductInfo = mongoose.model("ProductInfo", ProductInfoSchema);
+      await ProductInfo.findOneAndUpdate(
+        { productId: productInfo.productId },
+        productInfo
+      );
     } catch (error) {
       throw error;
-    } finally {
-      await client.close();
     }
   },
   getProductInfoRepository: async function (productId) {
-    const client = getClient();
     try {
-      await client.connect();
-      return await client
-        .db("store")
-        .collection("productInfo")
-        .findOne({ productId });
+      const mongoose = await connect();
+      const ProductInfo = mongoose.model("ProductInfo", ProductInfoSchema);
+      return await ProductInfo.findOne({ productId }).exec();
     } catch (error) {
       throw error;
-    } finally {
-      await client.close();
     }
   },
   createReview: async function (review, productId) {
@@ -66,32 +56,21 @@ const productInfoRepository = {
     }
   },
   getAllProductInfoRepository: async function () {
-    const client = getClient();
     try {
-      await client.connect();
-      return await client
-        .db("store")
-        .collection("productInfo")
-        .find({})
-        .toArray();
+      const mongoose = await connect();
+      const ProductInfo = mongoose.model("ProductInfo", ProductInfoSchema);
+      return await ProductInfo.find({}).exec();
     } catch (error) {
       throw error;
-    } finally {
-      await client.close();
     }
   },
   deleteProductInfoRepository: async function (productId) {
-    const client = getClient();
     try {
-      await client.connect();
-      return await client
-        .db("store")
-        .collection("productInfo")
-        .deleteOne({ productId });
+      const mongoose = await connect();
+      const ProductInfo = mongoose.model("ProductInfo", ProductInfoSchema);
+      await ProductInfo.deleteOne({ productId });
     } catch (error) {
       throw error;
-    } finally {
-      await client.close();
     }
   },
 };
