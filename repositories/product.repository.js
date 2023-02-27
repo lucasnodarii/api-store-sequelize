@@ -44,7 +44,7 @@ const productRepository = {
     } catch (error) {
       throw error;
     }
-  },
+  }, 
 };
 
 export default productRepository;

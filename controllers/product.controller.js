@@ -91,6 +91,50 @@ const productController = {
       next(error);
     }
   },
+  createReview: async function (req, res, next) {
+    try {
+      let params = req.body;
+      if (!params.productId || !params.review) {
+        throw new Error("Product ID and review are orbrigatories");
+      }
+      await productService.createReviewService(params.review, params.productId);
+      res.end();
+      logger.info(`POST /product/review`);
+    } catch (error) {
+      next(error);
+    }
+  },
+  deleteReview: async function (req, res, next) {
+    try {
+      await productService.deleteReviewService(
+        parseInt(req.params.id),
+        req.params.index
+      );
+      res.end();
+      logger.info(
+        `DELETE /product/${req.params.id}/review/${req.params.index}`
+      );
+    } catch (error) {
+      next(error);
+    }
+  },
+  getAllProductsInfo: async function (req, res, next) {
+    try {
+      res.send(await productService.getAllProductInfoService());
+      logger.info(`GET /product/info`);
+    } catch (error) {
+      next(error);
+    }
+  },
+  deleteProductInfo: async function (req, res, next) {
+    try {
+      res.send(await productService.deleteProductInfoService(parseInt(req.params.id)));
+      logger.info(`DELETE /product/info`);
+    } catch (error) {
+      next(error);
+    }
+  },
+  
 };
 
 export default productController;

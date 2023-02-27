@@ -43,6 +43,57 @@ const productInfoRepository = {
       await client.close();
     }
   },
+  createReview: async function (review, productId) {
+    try {
+      const productInfo = await productInfoRepository.getProductInfoRepository(
+        productId
+      );
+      productInfo.reviews.push(review);
+      await productInfoRepository.updateProductInfoRepository(productInfo);
+    } catch (error) {
+      throw error;
+    }
+  },
+  deleteReview: async function (productId, index) {
+    try {
+      const productInfo = await productInfoRepository.getProductInfoRepository(
+        productId
+      );
+      productInfo.reviews.splice(index, 1);
+      await productInfoRepository.updateProductInfoRepository(productInfo);
+    } catch (error) {
+      throw error;
+    }
+  },
+  getAllProductInfoRepository: async function () {
+    const client = getClient();
+    try {
+      await client.connect();
+      return await client
+        .db("store")
+        .collection("productInfo")
+        .find({})
+        .toArray();
+    } catch (error) {
+      throw error;
+    } finally {
+      await client.close();
+    }
+  },
+  deleteProductInfoRepository: async function (productId) {
+    const client = getClient();
+    try {
+      await client.connect();
+      return await client
+        .db("store")
+        .collection("productInfo")
+        .deleteOne({ productId });
+    } catch (error) {
+      throw error;
+    } finally {
+      await client.close();
+    }
+  },
 };
 
 export default productInfoRepository;

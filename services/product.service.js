@@ -20,7 +20,9 @@ const productService = {
 
   getProductService: async function (id) {
     const product = await productRepository.getProductRepository(id);
-    product.info = await productInfoRepository.getProductInfoRepository(parseInt(id));
+    product.info = await productInfoRepository.getProductInfoRepository(
+      parseInt(id)
+    );
 
     return product;
   },
@@ -43,9 +45,21 @@ const productService = {
   createProductInfoService: async function (productInfo) {
     await productInfoRepository.createProductInfoRepository(productInfo);
   },
-  updateProductInfoService: async function (productInfo){
+  updateProductInfoService: async function (productInfo) {
     await productInfoRepository.updateProductInfoRepository(productInfo);
-  }
+  },
+  createReviewService: async function (review, productId) {
+    await productInfoRepository.createReview(review, productId);
+  },
+  deleteReviewService: async function (productId, index) {
+    await productInfoRepository.deleteReview(productId, index);
+  },
+  getAllProductInfoService: async function () {
+    return await productInfoRepository.getAllProductInfoRepository();
+  },  
+  deleteProductInfoService: async function (productId) {
+    const product = await productInfoRepository.deleteProductInfoRepository(productId);
+  },
 };
 
 export default productService;
